@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        var myFunction = function (){
+            return "Hii";
+        };
+        console.log(myFunction());
+        console.log(myFunction);
+
+        //Other way
+        function myfunction(){
+            return "Good Morning";
+        }
+        console.log(myfunction());
+        console.log(myfunction);
+
+        //arguments
+        function arguments(argument1 , argument2){
+            console.log("My first argument is " + argument1);
+            console.log("My second argument is " + argument2);
+        }
+        arguments(1,2);
+
+        //Arthimetic using function
+        function add(a,b){
+            return (a+b);
+        };
+        function multiply(a,b){
+            return a*b ; 
+        };
+        console.log(add(2,3));
+        console.log(multiply(2,3));
+        console.log(add(multiply(36325,9824),777))
+        
+        //Passing array as an argument
+        function arearraysame(array1, array2){
+            console.log(arguments.length);
+            if (array1.length != array2.length){
+                return false;
+            }
+            else{
+                var x = false;
+                for(i=0 ; i<array1.length ; i++)
+                {
+                    if(array1[i] === array2[i]){
+                        x = true;
+                    }
+                    else{
+                        x = false;
+                    }
+                }
+                return x;
+            };
+        };
+        console.log(arearraysame([1,2,3],[1,5,6]));
+        console.log(arearraysame([1,2,3],[1,2,3]));
+
+        //Passing object as an argument
+        var obj = {
+            fname: "Ayushi",
+            lname: "Upadhyay",
+            age: 22,
+            fullname: function(){
+                return (this.fname + " " + this.lname);
+            }
+        };
+        console.log(obj.fullname());
+        function object(obj){
+            console.log(obj.fname);
+        };
+        object(obj);
+
+        //Self-invoking the function
+        (function(){
+            console.log("Good morning");
+        })();
+
+        //call() method
+        var person = {
+            fname: "Ayushi",
+            lname: "Upadhyay",
+            fullname : function(){
+                return this.fname + " " + this.lname;
+            }
+        }
+        var person1 = {
+            fname : "Ayushi",
+            lname: "Upadhyay"
+        }
+        const person2 = {
+            fname : "Hari",
+            lname : "Upadhyay"
+        };
+        console.log(person.fullname.call(person1));
+
+        //apply() method
+        console.log(Math.max.apply(null,[1,2,3]));
+
+        //bind() method
+        console.log(person.fullname.bind(person));
+
+        var d = new Date();
+        //error
+        console.log("Year: " + d.setFullYear(2020));
+        console.log("Month: " + d.setMonth(10));
+        console.log("Date: " + d.setDate(15));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <script>
+        //Loops
+
+//for loop
+var animal = ['monkey', 'cow', 'hen'];
+for (var i = 0 ; i<animal.length ; i++)
+{
+    animal[i] = "awesome " + animal[i];
+}
+console.log(animal);
+
+//getting random string
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var randomstring = '';
+var i=0;
+while(randomstring.length<6){
+    randomstring = randomstring + alphabet[Math.floor(Math.random()*randomstring.length)];
+    i++;
+}
+console.log(randomstring);
+
+//replacing certain letters
+var input = "javascript is awesome";
+var output = "";
+for(var i=0 ; i<input.length ; i++){
+    x = input[i];
+    switch(x.toLowerCase()){
+        case "a": output = output + "4";
+        break;
+        case 'e': output = output + "3";
+        break;
+        case 'i': output = output + "1";
+        break;
+        case 'o': output = output + '0';
+        break;
+        default: output = output + x;
+        break;    
+    }
+}
+console.log(output);
+    </script>
+</body>
+</html>

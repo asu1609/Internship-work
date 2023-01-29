@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id = "heading" class="intro">Heading 1</h1>
+    <p id="demo"></p>
+    <p id="p1">Text</p>
+    <button id="btn">Click</button>
+    <script>
+        var x = document.getElementById("heading");
+        console.log(x);
+        x = document.getElementById("id");
+        console.log(x);
+        x = document.querySelectorAll("h1#heading");
+        console.log(x);
+        x = document.querySelectorAll("h1.intro");
+        console.log(x);
+        document.getElementById("heading").innerHTML = "New Heading";
+        document.write("Date: " + new Date());  
+        document.getElementById("p1").style.color = "blue";
+        document.getElementById("heading").style.color = 'blue';
+        document.getElementById("demo").innerHTML = new Date();
+        document.getElementById("demo").style.color = 'blue';
+        document.getElementById("btn").onclick = function(){
+            document.getElementById('btn').style.backgroundColor = 'pink';
+        }
+    </script>
+</body>
+</html>
