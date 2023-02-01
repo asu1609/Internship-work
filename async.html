@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async/Await</title>
+</head>
+<body>
+    <script>
+        async function ayncfun(){
+            console.log("1");
+            var result = await func();
+            console.log("Completed");
+        } 
+        function func(value){
+            var x = 1;
+            var promise = new Promise(function(resolve, reject){
+                if (x == 1){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            });
+            console.log("3")
+            promise.then(function(){console.log("2");}, function(){console.log("rejected");})
+            return promise;
+        }
+        
+        ayncfun();
+        newfunc();
+        function newfunc(){
+            console.log("4");
+        }
+
+    </script>
+</body>
+</html>
